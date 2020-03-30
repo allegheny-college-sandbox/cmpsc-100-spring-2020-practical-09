@@ -26,9 +26,9 @@ public class WordAnalysis {
     }
     
     // Read only a subset of the list - EXTRA CREDIT
-    Scanner keyInput = new Scanner(System.in);
+    /*Scanner keyInput = new Scanner(System.in);
     System.out.print("Enter number of words to read (0 to read all): ");
-    int limit = keyInput.nextInt();
+    int limit = keyInput.nextInt();*/
     
     // Initialize integers used in loop
     int valueLen;
@@ -58,9 +58,9 @@ public class WordAnalysis {
       count++;
       
       // Limit to subset of words - EXTRA CREDIT
-      if (count == limit) {
+      /*if (count == limit) {
         break;
-      }
+      }*/
     }
     
     // Print data
