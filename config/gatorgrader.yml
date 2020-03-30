@@ -17,5 +17,5 @@ src/main/java/practicalnine:
         MatchFileRegex --regex "++|+= 1" --count 2
 
 ExecuteCommand --command "gradle build"
-ExecuteCommand --command "gradle run -q --console plain gradeRun"
-CoundCommandOutput --command "gradle run -q --console plain gradeRun" --count 3
+ExecuteCommand --command "gradle -q --console plain gradeRun"
+CountCommandOutput --command "gradle run -q --console plain gradeRun" --count 3

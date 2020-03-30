@@ -4,8 +4,16 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+/** Performs an analysis of a list of words.
+ *
+ * @author Solutions Repository
+ */
 public class WordAnalysis {
 
+  /** Entry point.
+   *
+   * @param args The command line arguments
+   */
   public static void main(String[] args) { 
     // Set up and load data source
     File file = null;
