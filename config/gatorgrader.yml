@@ -14,7 +14,8 @@ src/main/java/practicalnine:
         MatchFileFragment --fragment "fileInput.nextLine()" --count 1
         MatchFileFragment --fragment ".length()" --count 1
         MatchFileFragment --fragment "if (" --count 1
-        MatchFileRegex --regex "++|+\=" --count 2
+        MatchFileFragment --fragment "++" --count 1
+        MatchFileFragment --fragment "+=" --count 1
 
 ExecuteCommand --command "gradle build"
 ExecuteCommand --command "gradle -q --console plain gradeRun"
