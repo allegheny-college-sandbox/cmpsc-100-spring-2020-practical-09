@@ -64,7 +64,7 @@ public class WordAnalysis {
     }
     
     // Print data
-    System.out.println(count + " total words read");
+    System.out.println("Total words read: " + count);
     System.out.println("The longest word is: " + longestWord 
                        + " (" + maxLen + ") letters long");
     System.out.print("The average word length is: " 
