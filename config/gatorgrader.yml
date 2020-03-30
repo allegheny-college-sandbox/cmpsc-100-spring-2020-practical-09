@@ -1,0 +1,21 @@
+---
+name: practical-09
+break: true
+indent: 4
+---
+
+src/main/java/practicalnine:
+    WordAnalysis.java:
+        ConfirmFileExists
+        CountSingleLineComments --language Java --count 6
+        MatchFileFragment --fragment "{Your Name Here}" --count 0 --exact
+        MatchFileFragment --fragment "TODO" --count 0 --exact
+        MatchFileFragment --fragment "while (fileInput.hasNextLine())" --count 1 --exact
+        MatchFileFragment --fragment "fileInput.nextLine()" --count 1
+        MatchFileFragment --fragment ".length()" --count 1
+        MatchFileFragment --fragment "if (" --count 1
+        MatchFileRegex --regex "++|+= 1" --count 2
+
+ExecuteCommand --command "gradle build"
+ExecuteCommand --command "gradle run -q --console plain gradeRun"
+CoundCommandOutput --command "gradle run -q --console plain gradeRun" --count 3

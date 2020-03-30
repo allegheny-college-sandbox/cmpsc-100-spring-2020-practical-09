@@ -1,0 +1,46 @@
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+    mavenLocal()
+    dependencies {
+      classpath "gradle.plugin.org.gatored:gatorgradle:0.4.+"
+    }
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.gatored.gatorgradle'
+
+repositories {
+  mavenLocal()
+  jcenter()
+  mavenCentral()
+}
+
+apply plugin: 'application'
+mainClassName = 'practicalnine.LibraryCatalog'
+
+apply plugin: 'checkstyle'
+checkstyle.toolVersion = '8.1'
+checkstyle {
+  ignoreFailures = false
+  maxWarnings = 0
+  maxErrors = 0
+  configFile = new File(rootDir, "config/checkstyle/google_checks.xml")
+}
+
+run {
+  standardInput = System.in
+}
+
+task gradeRun (type: JavaExec, dependsOn: 'classes') {
+  apply plugin: 'application'
+  classpath = sourceSets.main.runtimeClasspath
+  main = 'practicalnine/WordAnalysis'
+  Random random = new Random();
+  String input = String.valueOf(random.nextInt(29995) + 1);
+  InputStream stream = new ByteArrayInputStream(input.getBytes());
+  standardInput = stream
+}
